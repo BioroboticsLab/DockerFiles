@@ -1,2 +1,2 @@
 # DockerFiles
-Dockerfiles for building the biotracker
+Dockerfiles for building and testing the biotracker
