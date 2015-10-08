@@ -1,6 +1,6 @@
 # This dockerfile is used to run the biotracker
 
-FROM sh4ke/ubuntu-15.04-jenkins-slave
+FROM biotracker/ubuntu-15.04-slave
 Maintainer Michael Wittig <witmic1@gmail.com>
 
 # install all dependencies
@@ -31,7 +31,3 @@ RUN apt-get install -y python-dev python3-dev
 RUN mkdir -p /home/jenkins/scripts
 COPY setup-biorobotics-dev-environment.sh /home/jenkins/scripts/setup-biorobotics-dev-environment.sh
 RUN chmod +x /home/jenkins/scripts/setup-biorobotics-dev-environment.sh; chown -R jenkins:jenkins /home/jenkins/scripts
-
-User jenkins
-WORKDIR /home/jenkins
-CMD bash -c "~/scripts/setup-biorobotics-dev-environment.sh"
