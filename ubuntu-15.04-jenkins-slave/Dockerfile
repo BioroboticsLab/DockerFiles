@@ -1,7 +1,7 @@
 # This Dockerfile is used to build an image containing basic stuff to be used as a Jenkins slave build node. 
 
 FROM ubuntu:15.04
-MAINTAINER Michael Wittig <witmic1@gmail.com> 
+MAINTAINER Michael Wittig <michael.wittig@fu-berlin.de>
 
 #RUN sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
 ENV DEBIAN_FRONTEND noninteractive
@@ -27,7 +27,6 @@ RUN echo "jenkins:$(< /dev/urandom tr -dc A-Za-z0-9 | head -c 32)" | chpasswd
 
 # Add jenkins SSH pubkey to authorized_keys
 RUN mkdir -p /home/jenkins/.ssh
-RUN mkdir -p /root/.ssh
 
 RUN echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/4M6G+wnzZFaxio8EVRhKXz/RMa1e0hh2eZeE5Da4S9pQnR7zcZNa90bpqHA9GOUfrYMoLOYXoQp5iKq/WzTzhQmVe6mxxuJMUWCQC1Ne2BMB3OkYjGeOeM4bRzFbM1SVxYAumoncdRB/77FN6D1EYgBWTr0ySRQOy3AbH5wMSb2ZKnhrd4W5JMqAxqyrSCoFUlXzD9gMeHzFhOoUItMh62U6CYPAErRDLPaFqjVOR9thzpfYl5xQ3xrS0ldmY8wL3u7mtMHG5wPt2xV4mfyHUqGlONpBKINPH4qKtJ3qsxdyaR0tvxCy8cbEEJLnfJFQcOg88E9X6M2NWVdNks/v jenkins@flip" >> /home/jenkins/.ssh/authorized_keys
 
