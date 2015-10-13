@@ -19,15 +19,10 @@ RUN apt-get update && apt-get install -y \
     qt5-default \
     libopencv-dev \
     libboost-all-dev \
-    libc++abi-dev
+    libc++abi-dev && \
+    apt-get install -y --no-install-recommends doxygen && \
+    apt-get install -y python-dev python3-dev && \
+    mkdir -p /home/jenkins/scripts
 
-# install doxygen
-RUN apt-get install -y --no-install-recommends doxygen
-
-# install python
-RUN apt-get install -y python-dev python3-dev
-
-# Switch to jenkins and setup environment
-RUN mkdir -p /home/jenkins/scripts
 COPY build-biotracker.sh /home/jenkins/scripts/build-biotracker.sh
 RUN chmod +x /home/jenkins/scripts/build-biotracker.sh; chown -R jenkins:jenkins /home/jenkins/scripts
