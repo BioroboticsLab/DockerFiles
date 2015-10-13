@@ -29,5 +29,5 @@ RUN apt-get install -y python-dev python3-dev
 
 # Switch to jenkins and setup environment
 RUN mkdir -p /home/jenkins/scripts
-COPY setup-biorobotics-dev-environment.sh /home/jenkins/scripts/setup-biorobotics-dev-environment.sh
-RUN chmod +x /home/jenkins/scripts/setup-biorobotics-dev-environment.sh; chown -R jenkins:jenkins /home/jenkins/scripts
+COPY build-biotracker.sh /home/jenkins/scripts/build-biotracker.sh
+RUN chmod +x /home/jenkins/scripts/build-biotracker.sh; chown -R jenkins:jenkins /home/jenkins/scripts

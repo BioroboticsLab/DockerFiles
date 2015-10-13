@@ -41,8 +41,12 @@ for BUILD_TYPE in $BUILD_TYPES; do
         mkdir -p $BUILD_DIR/biotracker_core
         cd $BUILD_DIR/biotracker_core
         print_message "biotracker_core" $BUILD_TYPE `pwd`
-        cmake -Wno-dev -DBIOTRACKER_BUILD_TESTS=ON -DCMAKE_BUILD_TYPE=$BUILD_TYPE $SRC_DIR/biotracker_core 
+        cmake -Wno-dev -DCMAKE_BUILD_TYPE=$BUILD_TYPE $SRC_DIR/biotracker_core 
         make -j $NUM_THREADS
+        make testmain
+        cmake
+        cd $BUILD_DIR/biotracker_core/test/testmain
+        ./testmain
 
         mkdir -p $BUILD_DIR/biotracker_gui
         cd $BUILD_DIR/biotracker_gui
