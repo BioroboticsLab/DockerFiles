@@ -46,7 +46,7 @@ for BUILD_TYPE in $BUILD_TYPES; do
         make testmain
         cmake
         cd $BUILD_DIR/biotracker_core/test/testmain
-        ./testmain
+        ./testmain --gtest_output="xml:testresults_$BUILD_TYPE.xml"
 
         mkdir -p $BUILD_DIR/biotracker_gui
         cd $BUILD_DIR/biotracker_gui
