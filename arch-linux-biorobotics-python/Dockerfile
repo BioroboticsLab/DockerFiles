@@ -1,4 +1,4 @@
-FROM biorobotics/arch
+FROM bioroboticslab/arch
 MAINTAINER github@leon-sixt.de
 
 RUN pacman -S --noconfirm \
