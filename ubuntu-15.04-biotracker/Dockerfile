@@ -4,8 +4,8 @@ FROM bioroboticslab/ubuntu-15.04-jenkins-slave
 Maintainer Michael Wittig <witmic1@gmail.com>
 
 # install all dependencies
-RUN apt-get update && apt-get install -y \
-    git \
+RUN apt-get update && \
+    apt-get install -y --force-yes git \
     apt-utils \
     build-essential \
     libgtk2.0-dev \
@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
     qt5-default \
     libopencv-dev \
     libboost-all-dev \
-    libc++abi-dev && \
+    libc++abi-dev \
     python-dev \
     python3-dev \
     python-numpy \
