@@ -1,6 +1,6 @@
 # This dockerfile is used to run the biotracker
 
-FROM bioroboticslab/ubuntu-15.04-slave
+FROM bioroboticslab/ubuntu-15.04-jenkins-slave
 Maintainer Michael Wittig <witmic1@gmail.com>
 
 # install all dependencies
