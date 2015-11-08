@@ -20,8 +20,13 @@ RUN apt-get update && apt-get install -y \
     libopencv-dev \
     libboost-all-dev \
     libc++abi-dev && \
+    python-dev \
+    python3-dev \
+    python-numpy \
+    python3-numpy \
+    python3-setuptools \
+    astyle && \
     apt-get install -y --no-install-recommends doxygen && \
-    apt-get install -y python-dev python3-dev && \
     mkdir -p /home/jenkins/scripts
 
 COPY build-biotracker.sh /home/jenkins/scripts/build-biotracker.sh
