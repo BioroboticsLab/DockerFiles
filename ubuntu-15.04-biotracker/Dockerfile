@@ -25,8 +25,11 @@ RUN apt-get update && apt-get install -y \
     python-numpy \
     python3-numpy \
     python3-setuptools \
+    libzmq-dev \
     astyle && \
     apt-get install -y --no-install-recommends doxygen && \
+    easy_install3 pip && \
+    pip install pyzmq && \
     mkdir -p /home/jenkins/scripts
 
 COPY build-biotracker.sh /home/jenkins/scripts/build-biotracker.sh
