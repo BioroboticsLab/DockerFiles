@@ -68,14 +68,6 @@ RUN pacman --noconfirm -U *.tar.xz
 
 ENV PATH=$PATH:/opt/cuda/bin
 
-# ADD extracts files to /opt/cuda
-ADD cudnn-7.0-linux-x64-v3.0-prod.tgz /opt/
-
-COPY build_caffe.sh /usr/bin/build_caffe.sh
-RUN chmod +x /usr/bin/build_caffe.sh
-WORKDIR /opt
-RUN build_caffe.sh
-
 COPY setup-biorobotics-dev-environment.sh /usr/bin/setup-biorobotics-dev-environment.sh
 RUN chmod +x /usr/bin/setup-biorobotics-dev-environment.sh
 
