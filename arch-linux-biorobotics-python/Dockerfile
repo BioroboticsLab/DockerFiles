@@ -1,6 +1,8 @@
 FROM bioroboticslab/arch
 MAINTAINER github@leon-sixt.de
 
+RUN pacman -Syu --noconfirm
+
 RUN pacman -S --noconfirm \
     python \
     python-pip \
