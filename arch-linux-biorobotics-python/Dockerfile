@@ -19,5 +19,3 @@ RUN pip install keras==0.1.3 \
 
 ENV CUDA_ROOT=/opt/cuda
 ENV THEANO_FLAGS='cuda.root=/opt/cuda,device=gpu,floatX=float32'
-# ADD extracts files to /opt/cuda
-ADD cudnn-7.0-linux-x64-v3.0-prod.tgz /opt/
