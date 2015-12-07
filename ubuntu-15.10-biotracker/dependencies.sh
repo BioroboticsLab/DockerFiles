@@ -17,8 +17,16 @@ apt-get update && apt-get install -y \
     libswscale-dev \
     qt5-default \
     libopencv-dev \
-    libboost-all-dev \
     libc++abi-dev
+    libboost-all-dev \
+
+#cd /usr/local
+#wget http://downloads.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.tar.bz2
+#tar --bzip2 -xf boost_1_59_0.tar.bz2
+#rm boost_1_59_0.tar.bz2
+#cd boost_1_59_0
+#./bootstrap.sh
+#./b2 install
 
 # PYTHON deps
 apt-get install -y python-dev
