@@ -36,3 +36,30 @@ apt-get install -y libzmq-dev
 pip install pyzmq
 
 apt-get install -y python-zmq
+
+mkdir repos
+cd repos
+
+git clone git://github.com/jedisct1/libsodium.git
+cd libsodium
+./autogen.sh
+./configure && make check
+make install
+ldconfig
+cd ..
+
+git clone git://github.com/zeromq/libzmq.git
+cd libzmq
+./autogen.sh
+./configure && make check
+make install
+ldconfig
+cd ..
+
+git clone git://github.com/zeromq/czmq.git
+cd czmq
+./autogen.sh
+./configure && make check
+make install
+ldconfig
+cd ..
