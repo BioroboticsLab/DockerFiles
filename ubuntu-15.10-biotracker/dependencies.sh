@@ -32,10 +32,11 @@ easy_install3 pip
 apt-get install -y --no-install-recommends doxygen
 
 # ZMQ deps
-apt-get install -y libzmq-dev
-pip install pyzmq
+apt-get install -y libzmq-dev \
+		   python-zmq \
+		   autoconf
 
-apt-get install -y python-zmq
+pip install pyzmq
 
 mkdir repos
 cd repos
