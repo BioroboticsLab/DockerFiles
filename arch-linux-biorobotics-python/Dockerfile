@@ -15,7 +15,7 @@ RUN pacman -S --noconfirm \
     mathjax
 
 RUN pip install -r https://raw.githubusercontent.com/Lasagne/Lasagne/master/requirements.txt
-RUN pip install keras==0.2.0 \
+RUN pip install keras==0.3.0 \
     scikit-learn \
     scikit-image
 
