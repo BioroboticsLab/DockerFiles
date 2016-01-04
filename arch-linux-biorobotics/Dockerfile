@@ -6,6 +6,7 @@ RUN pacman -Sy --noconfirm && \
 RUN pacman -Syyu --noconfirm
 RUN pacman -S --noconfirm \
     base-devel \
+    ca-certificates \
     gcc \
     clang \
     cuda \
