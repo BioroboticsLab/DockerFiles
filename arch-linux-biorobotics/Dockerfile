@@ -29,7 +29,7 @@ RUN pacman -S --noconfirm \
     google-glog \
     gflags \
     snappy \
-    vim \
+    vim-python3 \
     htop \
     wget \
     tmux \
