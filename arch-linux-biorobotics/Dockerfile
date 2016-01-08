@@ -30,6 +30,8 @@ RUN pacman -S --noconfirm \
     gflags \
     snappy \
     vim-python3 \
+    neovim \
+    python-neovim \
     htop \
     wget \
     tmux \
