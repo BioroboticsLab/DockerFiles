@@ -16,7 +16,6 @@ RUN pacman -S --noconfirm \
     ipython-notebook \
     mathjax
 
-RUN pip install -r https://raw.githubusercontent.com/Lasagne/Lasagne/master/requirements.txt
 RUN pip install keras==0.3.0 \
     scikit-learn 
 
