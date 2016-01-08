@@ -14,7 +14,9 @@ RUN pacman -S --noconfirm \
     python-scikit-image \
     jupyter \
     ipython-notebook \
-    mathjax
+    mathjax \
+    flake8 \
+    python-jedi
 
 RUN pip install keras==0.3.0 \
     scikit-learn 
