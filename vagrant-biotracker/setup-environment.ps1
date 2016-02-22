@@ -37,6 +37,11 @@ iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.p
 
 choco install -y git
 choco install -y python2
+choco install -y cygwin
+choco install -y cyg-get
+cyg-get openssh
+choco install -y winsshd -packageParameters '"/acceptEULA /keypairs=/home/sh4ke/.ssh/id_rsa.pub"'
+
 
 choco install -y cmake
 choco install -y vcredist2012
