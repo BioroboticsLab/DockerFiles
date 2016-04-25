@@ -63,6 +63,7 @@ Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox" do |vb|
     # Customize the amount of memory on the VM:
     vb.memory = "4096"
+    vb.customize ["modifyvm", :id, "--vram", "256"]
   end
 
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
