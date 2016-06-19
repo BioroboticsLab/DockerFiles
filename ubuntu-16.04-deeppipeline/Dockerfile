@@ -7,6 +7,15 @@ RUN apt-get update && apt-get install -y --assume-yes --install-recommends \
         python-dev \
         python3 \
         python3-dev \
+        python3-six \
+        python3-tz \
+        python3-babel \
+        python3-roman \
+        python3-docutils \
+        python3-markupsafe \
+        python3-jinja2 \
+        python3-numpy \
+        python3-pygments \
         checkinstall \
         git \
         build-essential \
@@ -44,6 +53,7 @@ RUN mkdir -p /tmp/source && \
           -DBUILD_TESTS=OFF \
           -DBUILD_PERF_TESTS=OFF \
           -DBUILD_EXAMPLES=OFF \
+          -DPYTHON_EXECUTABLE=/usr/bin/python3 \
           /tmp/source/opencv && \
     make -j `nproc`
 
@@ -62,11 +72,11 @@ RUN cd /tmp/source/boost_1_61_0 && \
     ./b2 -j `nproc` install
 
 RUN apt-get update && apt-get install -y --assume-yes --install-recommends \
-        python3-numpy \
         python3-scipy \
         python3-setuptools \
         python3-pip \
         python3-nose \
+        python3-pytest \
         python3-sklearn \
         python3-skimage \
         python3-pandas \
@@ -79,13 +89,25 @@ RUN apt-get update && apt-get install -y --assume-yes --install-recommends \
         vim-nox \
         libgflags-dev \
         libzmqpp-dev \
+        libhdf5-dev \
+        libhdf5-cpp-11 \
+        libgoogle-glog-dev \
         jq \
         zsh && \
     rm -rf /var/lib/apt/lists
 
-RUN pip3 install --no-deps Theano keras==1.0.3 jupyter xgboost
+RUN pip3 install \
+    Theano \
+    keras==1.0.3 \
+    jupyter \
+    xgboost \
+    pytest-cov \
+    pytest-benchmark \
+    pytest-flake8
 
-RUN locale-gen en_US.UTF-8
+RUN ldconfig    # otherwise the cuda libaries are not found
+
+RUN locale-gen en_US.UTF-8  # fix utf-8 encoding
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
