@@ -91,6 +91,7 @@ RUN apt-get update && apt-get install -y --assume-yes --install-recommends \
         libzmqpp-dev \
         libhdf5-dev \
         libhdf5-cpp-11 \
+        hdf5-tools \
         libgoogle-glog-dev \
         jq \
         zsh && \
