@@ -30,6 +30,8 @@ RUN apt-get update && apt-get install -y --assume-yes --install-recommends \
         libavutil-dev \
         libswscale-dev \
         libavresample-dev \
+        libavcodec-extra \
+        libav-tools \
         qtbase5-dev \
         pkg-config \
         libbz2-dev \
@@ -93,7 +95,9 @@ RUN apt-get update && apt-get install -y --assume-yes --install-recommends \
         python3-h5py \
         python3-matplotlib \
         python3-seaborn \
+        python3-cairocffi \
         tmux \
+        gdb \
         capnproto \
         vim \
         vim-nox \
