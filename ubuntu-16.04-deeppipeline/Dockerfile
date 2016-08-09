@@ -19,8 +19,9 @@ RUN apt-get update && apt-get install -y --assume-yes --install-recommends \
         checkinstall \
         git \
         build-essential \
-        cmake \
+        g++-4.9 \
         g++ \
+        cmake \
         wget \
         libopenblas-dev \
         libavformat-dev \
@@ -33,6 +34,15 @@ RUN apt-get update && apt-get install -y --assume-yes --install-recommends \
         pkg-config \
         libbz2-dev \
         && rm -rf /var/lib/apt/lists
+
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 20 && \
+    update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 10 && \
+    update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 20 && \
+    update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 10 && \
+    update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30 && \
+    update-alternatives --set cc /usr/bin/gcc && \
+    update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30 && \
+    update-alternatives --set c++ /usr/bin/g++
 
 RUN apt-get update && apt-get build-dep -y --assume-yes --no-install-recommends \
         libopencv-dev \
