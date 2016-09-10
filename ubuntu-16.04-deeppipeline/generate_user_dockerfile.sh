@@ -51,13 +51,13 @@ RUN groupadd --gid $UID $USER
 RUN useradd --uid $UID  --gid $USER \
     --home-dir /home/$USER --shell /usr/bin/zsh  \
     --groups sudo,$USER \
-    --password leon \
-    leon
+    --password $USER \
+    $USER
 
-# default password leon
-RUN echo leon:$PASSWORD | chpasswd && \
+# default password $USER
+RUN echo $USER:$PASSWORD | chpasswd && \
     echo root:$PASSWORD | chpasswd
 
-USER leon
-WORKDIR /home/leon
+USER $USER
+WORKDIR /home/$USER
 EOF
