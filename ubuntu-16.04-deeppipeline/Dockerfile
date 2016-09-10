@@ -108,6 +108,7 @@ RUN apt-get update && apt-get install -y --assume-yes --install-recommends \
         hdf5-tools \
         libgoogle-glog-dev \
         jq \
+        sshfs \
         zsh && \
     rm -rf /var/lib/apt/lists
 
