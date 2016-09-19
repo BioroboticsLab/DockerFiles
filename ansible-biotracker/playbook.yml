@@ -1,0 +1,4 @@
+- name: enable rdp module
+  hosts: all
+  roles:
+       - common

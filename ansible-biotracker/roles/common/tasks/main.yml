@@ -1,0 +1,9 @@
+---
+
+- name: install git
+  win_chocolatey:
+    name: git
+    state: present
+
+- name: enable rdp
+  script: enable_rdp.ps1
