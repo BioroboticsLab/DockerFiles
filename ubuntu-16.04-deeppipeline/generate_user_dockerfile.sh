@@ -1,5 +1,13 @@
 #! /usr/bin/env bash
 
+if [ "$1" == "--help" ]; then
+    echo "$0 generate user for the docker file"
+    echo "    -u | --user NAME          name of the user. default: current user"
+    echo "    --uid UID                 uid of the user. default: uid of current user"
+    echo "    -p | --password PASSWORD  password of the user. default: username"
+    exit 0
+fi
+
 while [[ $# -gt 1 ]]
 do
 key="$1"

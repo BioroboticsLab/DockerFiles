@@ -91,7 +91,6 @@ RUN apt-get update && apt-get install -y --assume-yes --install-recommends \
         python3-pytest \
         python3-sklearn \
         python3-skimage \
-        python3-pandas \
         python3-h5py \
         python3-matplotlib \
         python3-seaborn \
@@ -114,12 +113,17 @@ RUN apt-get update && apt-get install -y --assume-yes --install-recommends \
 
 RUN pip3 install \
     Theano \
-    keras==1.0.3 \
+    keras==1.0.8 \
     jupyter \
     xgboost \
     pytest-cov \
     pytest-benchmark \
-    pytest-flake8
+    pytest-flake8 \
+    shyaml \
+    more_itertools \
+    scikit-image \
+    click \
+    pandas
 
 RUN ldconfig    # otherwise the cuda libaries are not found
 
