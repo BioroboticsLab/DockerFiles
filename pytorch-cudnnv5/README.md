@@ -1,6 +1,6 @@
 # PyTorch docker file
 
-First follow the docker install instruction from [pytorch]().
+First follow the docker install instruction from [pytorch](https://github.com/pytorch/pytorch).
 
 Then execute in this directory:
 
